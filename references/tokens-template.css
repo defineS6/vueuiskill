@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Vue 项目全局设计变量参考模板 (src/styles/tokens.css)
+   使用场景：仅当项目从零新建、且未使用现成 UI 组件库变量时参考。
+   - 若项目只需单套配色：仅保留 :root 部分即可，无需添加深色或多主题代码。
+   - 若项目已使用 Element Plus / Ant Design Vue / Naive UI：请直接复用对应组件库的 CSS 变量。
+   ========================================================================== */
+
+:root {
+  /* 1. 字体角色 */
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* 2. 嵌套圆角阶梯（按项目风格调整具体数值，保持外大内小） */
+  --radius-xs: 4px;   /* 小徽章、复选框 */
+  --radius-sm: 6px;   /* 按钮、输入框、小标签 */
+  --radius-md: 8px;   /* 常规卡片、数据表格 */
+  --radius-lg: 12px;  /* 外层大面板、弹窗容器 */
+
+  /* 3. 标准字号阶梯 */
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+
+  /* 4. 常用间距阶梯 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+
+  /* 5. 核心语义颜色变量（单主题项目只改这里即可） */
+  --bg-canvas: #f5f7fa;      /* 页面最底层背景 */
+  --bg-page: #ffffff;        /* 主面板、常规卡片底色 */
+  --bg-surface: #f8fafc;     /* 次级内嵌块、表头、输入框底色 */
+  --bg-elevated: #ffffff;    /* 弹窗、下拉菜单等浮动层底色 */
+  --bg-hover: #f1f5f9;       /* 悬停态背景 */
+  --bg-selected: #eef2ff;    /* 选中态背景 */
+
+  --text-main: #0f172a;      /* 主标题与核心正文 */
+  --text-secondary: #475569; /* 次级正文、表头文字 */
+  --text-muted: #64748b;     /* 辅助说明文字 */
+  --text-meta: #94a3b8;      /* 占位符、时间戳、编号 */
+
+  --border-main: #e2e8f0;    /* 主边框线 */
+  --border-soft: #f1f5f9;    /* 列表/表格内部细分割线 */
+
+  --accent: #4f46e5;         /* 品牌主色 */
+  --accent-hover: #4338ca;   /* 品牌主色悬停 */
+  --accent-on: #ffffff;      /* 主色按钮上的文字颜色 */
+
+  --success: #10b981;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+
+  /* 6. 阴影层级 */
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-float: 0 12px 28px -6px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-overlay: 0 24px 48px -12px rgba(15, 23, 42, 0.18), 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+/* ==========================================================================
+   可选扩展：仅当项目明确需要「深色模式」时才添加以下 html.dark 块
+   如果项目是单色主题，请直接删掉下面这段
+   ========================================================================== */
+/*
+html.dark {
+  --bg-canvas: #090d16;
+  --bg-page: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-elevated: #1e293b;
+  --bg-hover: #1e293b;
+  --bg-selected: rgba(99, 102, 241, 0.18);
+
+  --text-main: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-meta: #64748b;
+
+  --border-main: #334155;
+  --border-soft: #1e293b;
+
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --accent-on: #ffffff;
+}
+*/
+
+/* 全局基础细节：鼠标点击不留残留焦点框，键盘导航保留焦点框 */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
